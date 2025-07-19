@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classefy - The All-in-One Platform for Modern Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .arabic-text, html[lang="ar"] .english-text {
+            display: none;
+        }
+        html[lang="ar"] .arabic-text {
+            display: block;
+        }
+        html[lang="ar"] {
+            direction: rtl;
+        }
+        html[lang="ar"] body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slider-item {
+            transition: opacity 1s ease-in-out;
+        }
+        /* Added for staggered animations */
+        .stagger-child {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header & Navigation Bar -->
+    <header id="header" class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
+        <div class="container mx-auto max-w-screen-xl px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center text-gray-500 font-bold text-xs"><img src="./images/logo.png" alt=""></div>
+                <span class="font-bold text-2xl text-gray-800">Classefy</span>
+            </a>
+            <nav class="flex items-center gap-6">
+                <div id="lang-switcher" class="cursor-pointer text-sm font-medium text-gray-500 hover:text-blue-600">
+                    <span class="english-text">AR</span>
+                    <span class="arabic-text">EN</span>
+                </div>
+                <a href="#contact" class="hidden md:inline-block px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-transform">
+                    <span class="english-text">Request a Demo</span>
+                    <span class="arabic-text">اطلب عرضًا تجريبيًا</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 text-center fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6">
+                <div class="english-text">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">The All-in-One Platform for the <br>Modern Algerian School</h1>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">The complete, affordable, and easy-to-use software designed to automate your administration, engage parents, and empower your teachers.</p>
+                    <a href="#contact" class="mt-10 inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-transform">Request a Free Demo</a>
+                </div>
+                <div class="arabic-text">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">المنصة الرقمية المتكاملة <br>للمدارس العصرية في الجزائر</h1>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">البرنامج الكامل، السهل، والمناسب التكلفة، والمصمم خصيصًا لأتمتة إدارتك المدرسية، تعزيز التواصل مع أولياء الأمور، وتمكين أساتذتك.</p>
+                    <a href="#contact" class="mt-10 inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-transform">اطلب عرضًا تجريبيًا مجانيًا</a>
+                </div>
+                <div class="mt-16">
+                    <img src="./images/dashboard.png" alt="Classefy Dashboard Screenshot" class="rounded-2xl shadow-2xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Bar -->
+        <section class="py-6 bg-gray-50 fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6">
+                <p class="text-center font-medium text-gray-500">
+                    <span class="english-text">Trusted by leading private schools in Algeria.</span>
+                    <span class="arabic-text">موثوق به من قبل المدارس الخاصة الرائدة في الجزائر.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- "Problem" Section -->
+        <section class="py-20 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="english-text">
+                    <h2 class="text-3xl font-bold text-gray-800">Are you tired of...?</h2>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Spending hours on manual attendance tracking?</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Chasing late tuition payments?</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Communication gaps between staff and parents?</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Wrestling with scattered spreadsheets?</span></li>
+                    </ul>
+                </div>
+                <div class="arabic-text">
+                    <h2 class="text-3xl font-bold text-gray-800">هل سئمت من...؟</h2>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>قضاء ساعات طويلة في تسجيل الحضور والغياب يدويًا؟</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>متابعة الأقساط المدرسية المتأخرة؟</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>فجوات التواصل بين الإدارة وأولياء الأمور؟</span></li>
+                        <li class="flex items-start gap-3 stagger-child"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>التعامل مع جداول بيانات متفرقة؟</span></li>
+                    </ul>
+                </div>
+                 <div class="bg-gray-100 p-8 rounded-2xl">
+                    <img src="./images/attendance-grid.png" alt="Illustration of organized data" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- "Solution" & Features Section -->
+        <section class="py-20 md:py-24 bg-gray-50 fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                        <span class="english-text">Everything You Need in One Place</span>
+                        <span class="arabic-text">كل ما تحتاجه في مكان واحد</span>
+                    </h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Feature Cards will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery / Platform Tour Section -->
+        <section class="py-20 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                    <span class="english-text">Explore the Platform</span>
+                    <span class="arabic-text">اكتشف المنصة</span>
+                </h2>
+                <div id="gallery-slider" class="mt-12 relative h-[500px] w-full max-w-4xl mx-auto">
+                    <!-- Slider images will be injected here -->
+                </div>
+                <div id="slider-dots" class="mt-6 flex justify-center gap-2">
+                    <!-- Slider dots will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- "How It Works" Section -->
+        <section class="py-20 md:py-24 bg-gray-50 fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                    <span class="english-text">Get Started in 3 Simple Steps</span>
+                    <span class="arabic-text">ابدأ في 3 خطوات بسيطة</span>
+                </h2>
+                <div class="mt-16 grid md:grid-cols-3 gap-8 text-left">
+                    <div class="relative p-8 bg-white rounded-xl shadow-md stagger-child">
+                        <div class="absolute top-0 left-0 -translate-x-3 -translate-y-3 w-12 h-12 bg-blue-100 text-blue-600 font-bold text-xl rounded-full flex items-center justify-center">1</div>
+                        <h3 class="font-bold text-xl"><span class="english-text">Request a Demo</span><span class="arabic-text">اطلب عرضًا تجريبيًا</span></h3>
+                        <p class="mt-2 text-gray-600"><span class="english-text">We'll understand your needs.</span><span class="arabic-text">سنتفهم احتياجاتك.</span></p>
+                    </div>
+                    <div class="relative p-8 bg-white rounded-xl shadow-md stagger-child" style="transition-delay: 150ms;">
+                         <div class="absolute top-0 left-0 -translate-x-3 -translate-y-3 w-12 h-12 bg-blue-100 text-blue-600 font-bold text-xl rounded-full flex items-center justify-center">2</div>
+                        <h3 class="font-bold text-xl"><span class="english-text">Onboarding & Training</span><span class="arabic-text">الإعداد والتدريب</span></h3>
+                        <p class="mt-2 text-gray-600"><span class="english-text">We'll set up your school and train your staff.</span><span class="arabic-text">سنقوم بإعداد مدرستك وتدريب موظفيك.</span></p>
+                    </div>
+                    <div class="relative p-8 bg-white rounded-xl shadow-md stagger-child" style="transition-delay: 300ms;">
+                         <div class="absolute top-0 left-0 -translate-x-3 -translate-y-3 w-12 h-12 bg-blue-100 text-blue-600 font-bold text-xl rounded-full flex items-center justify-center">3</div>
+                        <h3 class="font-bold text-xl"><span class="english-text">Go Live</span><span class="arabic-text">انطلق!</span></h3>
+                        <p class="mt-2 text-gray-600"><span class="english-text">Start managing your school with ease.</span><span class="arabic-text">ابدأ في إدارة مدرستك بكل سهولة.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-20 md:py-24 bg-white fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                    <span class="english-text">Pricing Designed for Algeria</span>
+                    <span class="arabic-text">أسعار مصممة للسوق الجزائري</span>
+                </h2>
+                <div class="mt-12 grid md:grid-cols-3 gap-8">
+                    <!-- Pricing cards will be injected here -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final Call to Action (CTA) Section -->
+        <section id="contact" class="py-20 md:py-24 bg-blue-600 text-white text-center fade-in-section">
+            <div class="container mx-auto max-w-screen-xl px-6">
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    <span class="english-text">Ready to Transform Your School?</span>
+                    <span class="arabic-text">هل أنت مستعد لتطوير مدرستك؟</span>
+                </h2>
+                <a href="#" class="mt-8 inline-block px-8 py-4 bg-white text-blue-600 font-bold text-lg rounded-lg shadow-lg hover:bg-gray-100 transition-transform">
+                     <span class="english-text">Request Your Free Demo Today</span>
+                     <span class="arabic-text">اطلب عرضك التجريبي المجاني اليوم</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto max-w-screen-xl px-6 py-12 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold text-lg">Classefy</h3>
+                <p class="mt-2 text-sm text-gray-400">
+                    <span class="english-text">The future of school management in Algeria.</span>
+                    <span class="arabic-text">مستقبل إدارة المدارس في الجزائر.</span>
+                </p>
+            </div>
+            <div>
+                 <h3 class="font-bold text-lg"><span class="english-text">Contact Info</span><span class="arabic-text">معلومات الاتصال</span></h3>
+                 <ul class="mt-2 space-y-1 text-sm text-gray-400">
+                     <li>Phone: 0791 59 15 93</li>
+                     <li>Email: wassimtemoussi9@gmail.com</li>
+                 </ul>
+            </div>
+            <div>
+                 <h3 class="font-bold text-lg"><span class="english-text">Follow Us</span><span class="arabic-text">تابعنا</span></h3>
+                 <div class="mt-2 flex gap-4">
+                     <!-- Add social media links here -->
+                 </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 py-4">
+            <p class="text-center text-xs text-gray-500">&copy; 2025 Classefy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Language Switcher ---
+            const langSwitcher = document.getElementById('lang-switcher');
+            const htmlEl = document.documentElement;
+            langSwitcher.addEventListener('click', () => {
+                if (htmlEl.lang === 'en') {
+                    htmlEl.lang = 'ar';
+                } else {
+                    htmlEl.lang = 'en';
+                }
+            });
+
+            // --- On-Scroll Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Stagger children if they exist
+                        const children = entry.target.querySelectorAll('.stagger-child');
+                        children.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.style.opacity = '1';
+                                child.style.transform = 'translateY(0)';
+                            }, index * 150);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-section').forEach(section => observer.observe(section));
+
+            // --- Dynamic Content Injection ---
+            const featuresContainer = document.querySelector('.mt-16.grid');
+            const pricingContainer = document.querySelector('.mt-12.grid');
+            const gallerySlider = document.getElementById('gallery-slider');
+            const sliderDots = document.getElementById('slider-dots');
+
+            const features = [
+                { icon: '👥', en: 'Centralized Student & Staff Management', ar: 'إدارة مركزية للطلاب والموظفين' },
+                { icon: '💸', en: 'Streamlined Financial Control', ar: 'تحكم مالي مبسط' },
+                { icon: '✅', en: 'Automated Attendance & Timetabling', ar: 'تسجيل آلي للحضور وجداول زمنية ذكية' },
+                { icon: '🤝', en: 'Enhanced Parent & Student Engagement', ar: 'تواصل معزز مع أولياء الأمور والطلاب' },
+                { icon: '📚', en: 'Effortless Course & Materials Management', ar: 'إدارة سهلة للدورات والمواد التعليمية' },
+                { icon: '📈', en: 'Powerful Reporting & Data Export', ar: 'تقارير قوية وتصدير للبيانات' },
+                { icon: '✍️', en: 'Exams & Results Management', ar: 'إدارة الامتحانات والنتائج' },
+                { icon: '🎨', en: 'Workshops & Activities', ar: 'الورشات والأنشطة الإضافية' },
+                { icon: '📢', en: 'Events & Announcements', ar: 'الفعاليات والإعلانات' },
+            ];
+            
+            features.forEach((feature, index) => {
+                const featureEl = document.createElement('div');
+                featureEl.className = 'p-6 bg-white rounded-xl shadow-md stagger-child';
+                featureEl.style.transitionDelay = `${index * 100}ms`;
+                featureEl.innerHTML = `
+                    <div class="text-4xl">${feature.icon}</div>
+                    <h3 class="mt-4 font-bold text-lg english-text">${feature.en}</h3>
+                    <h3 class="mt-4 font-bold text-lg arabic-text">${feature.ar}</h3>
+                `;
+                featuresContainer.appendChild(featureEl);
+            });
+
+            const pricingPlans = [
+                {
+                    name: 'Essentiel',
+                    price: '25,000',
+                    users: 'Up to 1,000 Users',
+                    features: ['Core Features', 'Standard Support'],
+                    popular: false
+                },
+                {
+                    name: 'Professionnel',
+                    price: '65,000',
+                    users: 'Up to 2,500 Users',
+                    features: ['All Core Features', 'Excel Exports', 'Priority Support'],
+                    popular: true
+                },
+                {
+                    name: 'Entreprise',
+                    price: '120,000',
+                    users: 'Up to 5,000 Users',
+                    features: ['All Features', 'Custom Branding', 'Dedicated Support'],
+                    popular: false
+                }
+            ];
+
+            pricingPlans.forEach((plan, index) => {
+                const planEl = document.createElement('div');
+                planEl.className = `p-8 rounded-2xl text-center flex flex-col transition-transform hover:scale-105 stagger-child ${plan.popular ? 'bg-blue-600 text-white' : 'bg-white border-2 border-gray-200'}`;
+                planEl.style.transitionDelay = `${index * 150}ms`;
+                planEl.innerHTML = `
+                    ${plan.popular ? '<div class="mb-4 font-bold text-white bg-blue-500 rounded-full px-3 py-1 inline-block mx-auto text-sm">MOST POPULAR</div>' : ''}
+                    <h3 class="text-2xl font-bold">${plan.name}</h3>
+                    <div class="mt-4">
+                        <span class="text-5xl font-extrabold">${plan.price}</span>
+                        <span class="text-lg font-medium ${plan.popular ? 'text-blue-200' : 'text-gray-600'}"> DZD/month</span>
+                    </div>
+                    <p class="text-sm ${plan.popular ? 'text-blue-200' : 'text-gray-500'} mt-2">${plan.users}</p>
+                    <ul class="mt-8 text-left space-y-3 flex-grow">
+                        ${plan.features.map(f => `<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>${f}</li>`).join('')}
+                    </ul>
+                    <a href="#contact" class="mt-10 block w-full py-3 font-semibold rounded-lg ${plan.popular ? 'bg-white text-blue-600 hover:bg-blue-100' : 'bg-blue-600 text-white hover:bg-blue-700'}">Choose Plan</a>
+                `;
+                pricingContainer.appendChild(planEl);
+            });
+
+            // --- Gallery Slider ---
+            const sliderImages = [
+                './images/sign-in.png',
+                './images/students.png',
+                './images/form.png',
+                './images/classes.png',
+                './images/courses.png',
+                './images/timetable.png',
+                './images/exams.png',
+                './images/results.png',
+                './images/attendance.png',
+                './images/payments.png',
+                './images/announcements.png',
+                './images/events.png',
+                './images/workshops.png',
+            ];
+            let currentSlide = 0;
+
+            sliderImages.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'slider-item absolute top-0 left-0 w-full h-full object-cover rounded-xl shadow-xl';
+                img.style.opacity = index === 0 ? '1' : '0';
+                gallerySlider.appendChild(img);
+
+                const dot = document.createElement('button');
+                dot.className = `w-3 h-3 rounded-full transition-colors ${index === 0 ? 'bg-blue-600' : 'bg-gray-300'}`;
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                sliderDots.appendChild(dot);
+            });
+
+            const slides = gallerySlider.children;
+            const dots = sliderDots.children;
+
+            const goToSlide = (slideIndex) => {
+                slides[currentSlide].style.opacity = '0';
+                dots[currentSlide].classList.remove('bg-blue-600');
+                dots[currentSlide].classList.add('bg-gray-300');
+                
+                currentSlide = slideIndex;
+                
+                slides[currentSlide].style.opacity = '1';
+                dots[currentSlide].classList.add('bg-blue-600');
+                dots[currentSlide].classList.remove('bg-gray-300');
+            };
+
+            const nextSlide = () => {
+                const newIndex = (currentSlide + 1) % sliderImages.length;
+                goToSlide(newIndex);
+            };
+
+            setInterval(nextSlide, 5000); // Auto-play every 5 seconds
+        });
+    </script>
+</body>
+</html>
